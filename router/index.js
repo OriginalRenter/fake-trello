@@ -1,6 +1,8 @@
-import express from 'express'
-let router = new express()
+import { Router } from 'express'
+import auth from './auth.js'
 
-router.get('/', (req, res) => res.json('Hello Trello!'))
+const router = new Router()
+
+router.use('/auth', auth)
 
 export default router
